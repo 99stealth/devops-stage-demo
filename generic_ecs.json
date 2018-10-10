@@ -691,6 +691,13 @@
           ]
         }
       },
+      "ALBListener": {
+        "Description": "Your ALB Listener",
+        "Value": {
+          "Ref": "ALBListener"
+        },
+        "Export": { "Name": "ALBListener" }
+      },
       "taskdef":{
         "Value":{
           "Ref":"taskdefinition"
