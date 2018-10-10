@@ -1,0 +1,17 @@
+{
+    "Resources": {
+        "GetListenersFreePriorityID": {
+            "Type": "Custom::ALBFreePriority",
+            "Properties": {
+            "ServiceToken": { "Fn::ImportValue": "ALBPriorityCheckFunction"},
+            "listener_arn": { "Fn::ImportValue": "ALBListener" }
+            }
+        }
+    },
+    "Outputs": {
+        "FreePriorityID": {
+            "Description": "ARN of function which allows to find free Priority value of specific ALB",
+            "Value": { "Fn::GetAtt": ["GetListenersFreePriorityID", "Value"] }
+        }
+    }
+}
