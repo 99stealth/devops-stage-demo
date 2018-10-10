@@ -97,7 +97,7 @@
                 "        pass",
                 "    elif event['RequestType'] == 'Create':",
                 "        client = boto3.client('elbv2')",
-                "        response_from_listener = get_response(client, event['ResourceProperties']['listener_arn'])",
+                "        response_from_listener = get_response_from_listener(client, event['ResourceProperties']['listener_arn'])",
                 "        available_priority = search_available_priority(response_from_listener)",
                 "        rule_id = str(available_priority)",
                 "        cfnresponse.send(event, context, cfnresponse.SUCCESS, {'Value': rule_id})",
